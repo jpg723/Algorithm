@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
+/*https://www.acmicpc.net/problem/24418*/
+
 public class BJ24418 {
     static int m[][];
     static int cnt1 = 0, cnt2 = 0;
@@ -46,10 +48,10 @@ public class BJ24418 {
     static int matrix_path2(int[][] m, int n) {
         int[][] d = new int [n + 1][n + 1];
 
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i <= n; i++)
             d[i][0] = 0;
 
-        for (int j = 0; j < n; j++)
+        for (int j = 0; j <= n; j++)
             d[0][j] = 0;
 
         for (int i = 1; i <= n; i++) {
