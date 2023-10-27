@@ -11,9 +11,9 @@ public class BJ24418 {
 
         int n = sc.nextInt();
 
-        int[][] m = new int[n][n];
-        for (int i = 0; i < n; i++) {
-            for(int j = 0; j < n; j++) {
+        int[][] m = new int[n + 1][n + 1];
+        for (int i = 1; i <= n; i++) {
+            for(int j = 1; j <= n; j++) {
                 m[i][j] = sc.nextInt();
             }
         }
@@ -33,17 +33,17 @@ public class BJ24418 {
 
     //행렬 경로 문제 동적 프로그래밍
     public static int matrix_path2(int m[][], int n) {  // (1, 1)에서 (n, n)에 이르는 최고 점수를 구한다.
-        int[][]d = new int[n][n];
+        int[][]d = new int[n + 1][n + 1];
 
         for (int i = 0; i <= n; i++) {
             d[i][0] = 0;
         }
-        for (int j = 1; j < n; j++) {
-            d[0][j] =0;
+        for (int j = 1; j <= n; j++) {
+            d[0][j] = 0;
         }
 
-        for (int i = 1; i < n; i++) {
-            for (int j = 1; j < n; j++) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
                 d[i][j] = m[i][j] + max(d[i - 1][j], d[i][j - 1]);
             }
         }
