@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SchoolManager",
+            "request": "launch",
+            "mainClass": "SchoolManager",
+            "console": "integratedTerminal"
+        }
+    ]
+}
