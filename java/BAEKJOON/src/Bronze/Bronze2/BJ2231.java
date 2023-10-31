@@ -11,27 +11,20 @@ public class BJ2231 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int N = Integer.parseInt(br.readLine());
-        int M = 0;
+        int M = 0; //n+n의 분해합의 합
 
         for(int i = 1; i <= N; i++){
 
-            String n = String.valueOf(i);
+            int Nlength = String.valueOf(i).length(); //N의 자리수
             int num  = i;
-            int sum = 0;
+            int sum = num;
 
-            if(n.length() == 1){
-                sum = 2 * num;
+            for (int j = 0; j < Nlength; j++) { //num의 분해합
+                sum += num % 10;
+                num = num / 10;
             }
 
-            else {
-                sum = i;
-                for (int j = 0; j < n.length(); j++) {
-                    sum += num % 10;
-                    num = num / 10;
-                }
-            }
-
-            if(N == sum){
+            if(N == sum){ //num+num의 분해합이 N과 같으면 종료
                 M = i;
                 break;
             }
