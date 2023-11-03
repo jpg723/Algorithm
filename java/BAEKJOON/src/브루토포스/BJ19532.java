@@ -1,10 +1,13 @@
-package Bronze.Bronze2;
+package 브루토포스;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
+/**https://www.acmicpc.net/problem/19532
+ * 수학은 비대면강의입니다
+ */
 public class BJ19532 {
     public static void main(String args[]) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
