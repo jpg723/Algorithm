@@ -10,8 +10,6 @@ public class SLIVER3_BJ15652 {
 
     public static int[] arr;
     public static boolean[] visit;
-    public static int n1 = 1;
-    public static int n2 = 1;
 
     public static void main(String args[]) throws IOException{
 
@@ -40,6 +38,7 @@ public class SLIVER3_BJ15652 {
             for(int var: arr) {
                 if(temp > var) {
                     check = true;
+                    break;
                 }
                 temp = var;
             }
@@ -51,8 +50,6 @@ public class SLIVER3_BJ15652 {
                 bw.write("\n");
             }
         }
-
-
 
         else{
             for(int i = 0; i < n; i++){
