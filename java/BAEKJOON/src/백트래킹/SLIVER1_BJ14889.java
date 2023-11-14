@@ -38,7 +38,7 @@ public class SLIVER1_BJ14889 {
         }
 
         else{
-            for(int i = index; i < n; i++){
+            for(int i = 0; i < n; i++){
                 if(visit[i] == false){
                     visit[i] = true;
                     dfs(index + 1, depth + 1, n);
