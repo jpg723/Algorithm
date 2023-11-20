@@ -16,6 +16,7 @@ public class SLIVER3_BJ15652 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
+        //N과 M입력
         int N = Integer.parseInt(st.nextToken());
         int M = Integer.parseInt(st.nextToken());
 
@@ -36,6 +37,7 @@ public class SLIVER3_BJ15652 {
             boolean check = false;
 
             for(int var: arr) {
+                //arr요소
                 if(temp > var) {
                     check = true;
                     break;
