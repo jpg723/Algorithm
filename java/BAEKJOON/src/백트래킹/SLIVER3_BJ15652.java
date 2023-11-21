@@ -37,14 +37,17 @@ public class SLIVER3_BJ15652 {
             boolean check = false;
 
             for(int var: arr) {
-                //arr요소
+                //arr요소가 temp보다 작으면 check를 true로 변경한다.
+                //(이미 출력했다는 표시)
                 if(temp > var) {
                     check = true;
                     break;
                 }
+                //크면 temp를 현재 arr요소의 다음 요소로 변경한다.
                 temp = var;
             }
 
+            //check가 false면 출력
             if(check  == false) {
                 for (int var : arr) {
                     bw.write(var + " ");
