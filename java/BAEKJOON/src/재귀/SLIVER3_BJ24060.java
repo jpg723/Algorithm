@@ -39,6 +39,7 @@ public class SLIVER3_BJ24060 {
     }
 
     public static void merge_sort(int A[], int p, int r) { // A[p..r]을 오름차순 정렬한다.
+        //1.분할
         if (p < r) {
             int q = (p + r) / 2;       // q는 p, r의 중간 지점
             merge_sort(A, p, q);      // 전반부 정렬
@@ -54,12 +55,16 @@ public class SLIVER3_BJ24060 {
         int j = q + 1;
         int t = 0;
 
+        //2. 정복
         while (i <= q && j <= r) {
+            //왼쪽이 오른쪽보다 작으면 왼쪽 요소를 tmp에 저장
             if (A[i] <= A[j])
-                tmp[t++] = A[i++]; //tmp[t] <- A[i]; t++; i++;
+                tmp[t++] = A[i++];
+            // 왼쪽이 오른쪽보다 작으면 오른쪽 요소를 tmp에 저장
             else
-                tmp[t++] = A[j++]; //tmp[t] <- A[j]; t++; j++;
+                tmp[t++] = A[j++];
         }
+
         while (i <= q) { // 왼쪽 배열 부분이 남은 경우
             tmp[t++] = A[i++];
         }
@@ -68,9 +73,13 @@ public class SLIVER3_BJ24060 {
         }
         i = p;
         t = 0;
-        while (i <= r){  // 결과를 A[p..r]에 저장
+        // 결과를 A[p..r]에 저장
+        while (i <= r){
             A[i] = tmp[t];
-            cnt++; //저장 후 저장횟수 증가
+            //저장 후 저장횟수 증가
+            cnt++;
+
+            //K번째 저장횟수의 A[i]를 result에 저장
             if(K == cnt) {
                 result = A[i];
             }
