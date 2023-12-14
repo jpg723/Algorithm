@@ -30,6 +30,7 @@ public class SLIVER2_BJ9184 {
     static int[][][] dp = new int[21][21][21];
     public static int w(int a, int b, int c){
 
+        // a, b, c가 범위를 벗어나지 않으면서 메모이제이션이 되어있는 경우(비워져 있지 않은 경우)
         if(0 <= a && a <= 20 && 0 <= b && b <= 20 && 0 <= c && c <= 20 && dp[a][b][c] != 0) {
             return dp[a][b][c];
         }

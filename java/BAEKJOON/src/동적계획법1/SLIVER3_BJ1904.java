@@ -18,7 +18,7 @@ public class SLIVER3_BJ1904 {
         dp[1] = 1;
         dp[2] = 2;
 
-        // -1 로 초기화
+        // -1 로 초기화(N이 0, 1, 2를 제외한 수면 Tile함수를 실행시키기 위해서)
         for(int i = 3; i < dp.length; i++) {
             dp[i] = -1;
         }
