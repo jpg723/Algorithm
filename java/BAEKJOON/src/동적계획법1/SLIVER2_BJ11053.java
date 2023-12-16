@@ -27,42 +27,10 @@ public class SLIVER2_BJ11053 {
         int start = 0;
         int max = 0;
 
-        for(int i = n - 1; i >= 0; i--){
-            start = a[i];
-            int length = 1;
+        for(int i = 0; i < n; i++){
+            for(int j = i ; j < n; j++){
 
-            for(int j = n - 2; j >= 0; j--) {
-                System.out.println(start + " " + a[j]);
-                if (start > a[j]) {
-                    length++;
-                    start = a[j];
-                    System.out.println(length);
-                }
             }
-            System.out.println();
-
-            if(max < length)
-                max = length;
         }
-
-        for(int i = 0; i < 0; i--){
-            start = a[i];
-            int length = 1;
-
-            for(int j = n - 2; j >= 0; j--) {
-                System.out.println(start + " " + a[j]);
-                if (start > a[j]) {
-                    length++;
-                    start = a[j];
-                    System.out.println(length);
-                }
-            }
-            System.out.println();
-
-            if(max < length)
-                max = length;
-        }
-
-        System.out.println(max);
     }
 }
