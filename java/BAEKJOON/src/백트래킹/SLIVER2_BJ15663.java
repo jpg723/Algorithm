@@ -57,9 +57,9 @@ public class SLIVER2_BJ15663 {
         else{
             int before = 0;
             for(int i = 0; i < n; i++){
-                System.out.println(before + ":" + arr[i]);
-                if(visit[i] == false){
 
+                if(visit[i] == false){
+                    System.out.println(before + ":" + arr[i]);
                     if(before != arr[i]) {
                         visit[i] = true;
                         before = arr[i];
