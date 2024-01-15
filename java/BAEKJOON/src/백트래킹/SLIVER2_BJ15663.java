@@ -41,21 +41,25 @@ public class SLIVER2_BJ15663 {
 
         dfs(N, M, 0);
 
-        System.out.print(sb);
+        //System.out.print(sb);
     }
 
     public static void dfs(int n, int m, int depth){
 
         if(m == depth) {
             for(int var: result)
-                sb.append(var + " ");
-            sb.append("\n");
+                //sb.append(var + " ");
+                System.out.print(var + " ");
+            System.out.println();
+            //sb.append("\n");
         }
 
         else{
             int before = 0;
             for(int i = 0; i < n; i++){
+                System.out.println(before + ":" + arr[i]);
                 if(visit[i] == false){
+
                     if(before != arr[i]) {
                         visit[i] = true;
                         before = arr[i];
