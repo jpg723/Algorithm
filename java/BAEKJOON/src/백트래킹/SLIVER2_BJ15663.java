@@ -1,52 +1,68 @@
 package 백트래킹;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.StringTokenizer;
 
-public class SLIVER3_BJ15656 {
+public class SLIVER2_BJ15663 {
     /*
-        https://www.acmicpc.net/problem/15656
-        N과 M(7)
+        https://www.acmicpc.net/problem/15663
+        N과M(9)
      */
+
+    static StringBuilder sb = new StringBuilder();
     static int[] arr;
     static boolean[] visit;
     static int[] result;
-    static StringBuilder sb = new StringBuilder();
     public static void main(String[] args)throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
+        //N과 M입력
         int N = Integer.parseInt(st.nextToken());
         int M = Integer.parseInt(st.nextToken());
 
-        visit = new boolean[N];
+        //변수 설정
         arr = new int[N];
+        visit = new boolean[N];
         result = new int[M];
 
+        //N개의 수 입력
         st = new StringTokenizer(br.readLine(), " ");
-        for(int i = 0; i < N; i++)
+        for(int i = 0; i < N; i++){
             arr[i] = Integer.parseInt(st.nextToken());
+        }
 
+        //오름차순 정렬
         Arrays.sort(arr);
+
         dfs(N, M, 0);
 
-        System.out.println(sb);
+        System.out.print(sb);
     }
-    public static void dfs(int n, int m, int depth)throws IOException{
 
-        if(m == depth){
-            for(int var: result) {
+    public static void dfs(int n, int m, int depth){
+
+        if(m == depth) {
+            for(int var: result)
                 sb.append(var + " ");
-            }
             sb.append("\n");
         }
 
         else{
+            int before = 0;
             for(int i = 0; i < n; i++){
                 if(visit[i] == false){
-                    result[depth] = arr[i];
-                    dfs(n, m, depth + 1);
+                    if(before != arr[i]) {
+                        visit[i] = true;
+                        before = arr[i];
+                        result[depth] = arr[i];
+                        dfs(n, m, depth + 1);
+                        visit[i] = false;
+                    }
                 }
             }
         }
