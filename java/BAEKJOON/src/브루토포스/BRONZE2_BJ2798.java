@@ -13,6 +13,10 @@ import java.util.Collections;
 import java.util.StringTokenizer;
 
 public class BRONZE2_BJ2798 {
+    /*
+        https://www.acmicpc.net/problem/2798
+        블랙잭
+     */
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
