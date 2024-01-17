@@ -1,4 +1,4 @@
-package 브루토포스;
+package Bruteforcing;
 
 import java.io.IOException;
 import java.util.ArrayList;

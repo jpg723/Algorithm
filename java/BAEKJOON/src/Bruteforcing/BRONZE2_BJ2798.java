@@ -3,7 +3,7 @@
 // (powered by FernFlower decompiler)
 //
 
-package 브루토포스;
+package Bruteforcing;
 
 import java.io.BufferedReader;
 import java.io.IOException;
