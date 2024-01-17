@@ -1,4 +1,4 @@
-package 백트래킹;
+package Backtracking;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,10 +6,10 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class SLIVER2_BJ15665 {
+public class SLIVER2_BJ15666 {
     /*
-        https://www.acmicpc.net/problem/15665
-        N과 M(11)
+        https://www.acmicpc.net/problem/15666
+        N과 M(12)
      */
 
     static int[] arr;
@@ -37,27 +37,39 @@ public class SLIVER2_BJ15665 {
     }
 
     static StringBuilder sb = new StringBuilder();
+
     public static void dfs(int n, int m, int depth){
 
         if(m == depth){
+            int temp = 0;
+            boolean check = false;
+
             for(int var: result){
-                sb.append(var + " ");
+
+                if(temp > var)
+                    check = true;
+
+                temp = var;
             }
-            sb.append("\n");
+
+            if(check == false){
+                for(int var: result){
+                    sb.append(var + " ");
+                }
+                sb.append("\n");
+            }
         }
 
         else{
             int before = 0;
 
             for(int i = 0; i < n; i++){
-                if(before != arr[i]){
+                if(before != arr[i]) {
                     before = arr[i];
                     result[depth] = arr[i];
                     dfs(n, m, depth + 1);
                 }
-
             }
         }
     }
-
 }

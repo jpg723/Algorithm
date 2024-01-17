@@ -1,39 +1,39 @@
-package 백트래킹;
+package Backtracking;
 
 import java.io.*;
-import java.nio.Buffer;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class SLIVER3_BJ15655 {
-    /*https://www.acmicpc.net/problem/15655
-    N과 M(6)
+public class SLIVER3_BJ15654 {
+    /*https://www.acmicpc.net/problem/15654
+    N과 M(5)
      */
 
-    static int[] arr;
-    static boolean[] visit;
-    static int[] result;
-    public static void main(String[] args)throws IOException{
+    public static int[] arr;
+    public static int[] result;
+    public static boolean[] visit;
+    public static void main(String[] args)throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
         int N = Integer.parseInt(st.nextToken());
         int M = Integer.parseInt(st.nextToken());
 
-        visit = new boolean[N];
-        result = new int[M];
         arr = new int[N];
+        result = new int[M];
 
         st = new StringTokenizer(br.readLine(), " ");
         for(int i = 0; i < N; i++)
             arr[i] = Integer.parseInt(st.nextToken());
 
         Arrays.sort(arr);
-        dfs(N, M , 0, 0);
+        visit = new boolean[N];
+
+        dfs(N, M, 0);
     }
 
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-    public static void dfs(int n, int m, int depth, int start) throws IOException{
+    public static void dfs(int n, int m, int depth) throws IOException{
 
         if(m == depth){
             for(int var: result)
@@ -43,11 +43,11 @@ public class SLIVER3_BJ15655 {
         }
 
         else{
-            for(int i = start; i < n; i++){
-                if(visit[i] == false){
+            for(int i = 0; i < n; i++) {
+                if (visit[i] == false){
                     visit[i] = true;
                     result[depth] = arr[i];
-                    dfs(n, m, depth + 1, i + 1);
+                    dfs(n, m, depth + 1);
                     visit[i] = false;
                 }
             }
