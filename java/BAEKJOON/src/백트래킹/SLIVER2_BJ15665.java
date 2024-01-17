@@ -13,7 +13,6 @@ public class SLIVER2_BJ15665 {
      */
 
     static int[] arr;
-    static boolean[] visit;
     static int[] result;
     public static void main(String[] args)throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -23,7 +22,6 @@ public class SLIVER2_BJ15665 {
         int M = Integer.parseInt(st.nextToken());
 
         arr = new int[N];
-        visit = new boolean[N];
         result = new int[M];
 
         st = new StringTokenizer(br.readLine(), " ");
@@ -53,11 +51,9 @@ public class SLIVER2_BJ15665 {
 
             for(int i = 0; i < n; i++){
                 if(before != arr[i]){
-                    if(visit[i] == false) {
-                        before = arr[i];
-                        result[depth] = arr[i];
-                        dfs(n, m, depth + 1);
-                    }
+                    before = arr[i];
+                    result[depth] = arr[i];
+                    dfs(n, m, depth + 1);
                 }
 
             }
