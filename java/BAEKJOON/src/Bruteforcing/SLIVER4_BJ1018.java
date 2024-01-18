@@ -12,6 +12,7 @@ public class SLIVER4_BJ1018 {
      */
     static String [][] chess;
     static ArrayList<Integer> result = new ArrayList<>();
+
     public static void main(String[] args)throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
@@ -29,6 +30,7 @@ public class SLIVER4_BJ1018 {
 
         chess = new String[N][M];
 
+        //한 줄로 된 문자열은 문자 하나씩 잘라 배열에 넣기
         for(int i = 0; i < N; i++){
             for(int j = 0; j < M; j++) {
                 char charArr = arr[i].charAt(j);
@@ -42,6 +44,7 @@ public class SLIVER4_BJ1018 {
             }
         }
 
+        //result배열 중에서 최솟값 출력
         System.out.println(Collections.min(result));
 
     }
@@ -49,13 +52,17 @@ public class SLIVER4_BJ1018 {
 
         int count1 = 0;
         int count2 = 0;
-        
+
+        //시작되는 chess가 W인 경우 check = W,
+        //B인 경우 check = B
         String check = chess[col][row];
 
         for (int i = col; i < col + 8; i++) {
             for (int j = row; j < row + 8; j++) {
+
                 if(chess[i][j].equals(check)){
                     count2++;
+
                     if(chess[i][j].equals("W")){
                         check = "B";
                     }
@@ -73,6 +80,8 @@ public class SLIVER4_BJ1018 {
                     }
                 }
             }
+
+            //행이 바뀌면 이전에 check를 변경했으므로 원래대로 되돌린다.
             if(check.equals("W")){
                 check = "B";
             }
@@ -81,6 +90,7 @@ public class SLIVER4_BJ1018 {
             }
         }
 
+        //result배열에 넣기
         result.add(count1);
         result.add(count2);
     }
