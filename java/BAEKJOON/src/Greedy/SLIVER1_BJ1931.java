@@ -31,6 +31,7 @@ public class SLIVER1_BJ1931 {
             @Override
             public int compare(int[] o1, int[] o2) {
 
+                //시작시간이 같은 경우 마감시간이 큰 회의시간을 앞에 배치
                 if(o2[0] == o1[0])
                     return o2[1]-o1[1];
 
@@ -45,10 +46,10 @@ public class SLIVER1_BJ1931 {
             if ((start - time[i][1]) >= 0) {
                 start = time[i][0];
                 cnt++;
-                //System.out.print(time[index][0] + " " + time[index][1] + "\n");
             }
         }
 
+        //결과출력
         System.out.print(cnt);
     }
 
