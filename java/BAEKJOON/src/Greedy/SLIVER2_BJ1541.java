@@ -31,14 +31,20 @@ public class SLIVER2_BJ1541 {
             for(int j = 0; j < splitPlus.length; j++)
                 add += Integer.parseInt(splitPlus[j]);
 
+            //맨 앞에 있는 수를 result의 초기값으로 설정
             if(i == 0)
                 result = add;
+            
+            //그 외에는 다 빼주기
             else{
                 result -= add;
             }
+            
+            //add초기화
             add = 0;
         }
 
+        //결과 출력
         System.out.println(result);
 
     }
