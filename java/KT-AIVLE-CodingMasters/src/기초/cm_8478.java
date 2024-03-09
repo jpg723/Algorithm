@@ -17,8 +17,19 @@ public class cm_8478 {
         int B = Integer.parseInt(st.nextToken());
         int N = Integer.parseInt(st.nextToken());
 
-        int result = ((N - A) / (A - B)) + 1;
+        int day = 0;
 
-        System.out.println(result);
+        while(true){
+
+            day++;
+            N -= A;
+
+            if(N <= 0)
+                break;
+
+            N += B;
+        }
+
+        System.out.println(day);
     }
 }
