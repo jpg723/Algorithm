@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CodingTest.iml" filepath="$PROJECT_DIR$/CodingTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/KT-AIVLE-CodingMasters/KT-AIVLE-CodingMasters.iml" filepath="$PROJECT_DIR$/KT-AIVLE-CodingMasters/KT-AIVLE-CodingMasters.iml" />
       <module fileurl="file://$PROJECT_DIR$/SWEA/SWEA.iml" filepath="$PROJECT_DIR$/SWEA/SWEA.iml" />
     </modules>
   </component>
