@@ -17,7 +17,7 @@ public class cm_8481 {
 
         String[] name = new String[N];
         int[] iq = new int[N];
-        
+
         //이름, 아이큐 입력
         for(int i = 0; i < N; i++){
             StringTokenizer st = new StringTokenizer(br.readLine(), " ");
@@ -28,14 +28,14 @@ public class cm_8481 {
         for(int i = 0; i < N; i++){
             for(int j = i + 1; j < N; j++){
                 if(iq[i] < iq[j]){
-                    int temp_iq = iq[j];
-                    String temp_name = name[j];
+                    int temp_iq = iq[i];
+                    String temp_name = name[i];
 
-                    iq[j] = iq[i];
-                    name[j] = name[i];
+                    iq[i] = iq[j];
+                    name[i] = name[j];
 
-                    iq[i] = temp_iq;
-                    name[i] = temp_name;
+                    iq[j] = temp_iq;
+                    name[j] = temp_name;
                 }
             }
         }

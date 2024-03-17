@@ -68,18 +68,20 @@ public class cm_8537 {
             if (map[nx][ny] == 1) {
                 System.out.println("방향 전환");
                 System.out.print(direction + "-> ");
-                direction = (direction + 1) % 4;
 
-                System.out.println(direction);
-                System.out.println("============");
                 //반시계 방향으로
                 if(turnState) {
+                    direction = -1;
                     turnState = false;
                 }
                 //시계 방향으로
                 else {
+                    direction = 0;
                     turnState = true;
                 }
+
+                System.out.println(direction);
+                System.out.println("============");
             }
 
             else if(map[nx][ny] == 0){
