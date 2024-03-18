@@ -4,24 +4,23 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class cm_8506 {
-    //8506. 구름 별
-
+public class cm_8504 {
+    //8504. 설거지 담당
     public static void main(String[] args)throws IOException{
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int N = Integer.parseInt(br.readLine());
-        String star = "**";
 
-        for(int i = 0; i < N; i++){
+        String result = "";
 
-            for(int j = 0; j < i; j++) {
-                System.out.print(" ");
-            }
+        if(N == 1 || N == 3 || N == 5 || N == 7)
+            result = "RUN";
 
-            System.out.print(star);
-            System.out.println();
-        }
+        else
+            result = "STAY";
+
+        System.out.println(result);
+
     }
 }
