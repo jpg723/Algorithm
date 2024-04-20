@@ -1,3 +1,5 @@
+package CodingTestPre;
+
 import java.io.IOException;
 
 public class CodingTestPre2 {
