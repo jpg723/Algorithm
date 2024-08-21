@@ -9,6 +9,10 @@ import java.util.StringTokenizer;
 
 public class SLIVER2_BJ1260 {
 
+    /*https://www.acmicpc.net/problem/1260
+    DFS와 BFS
+     */
+
     static StringBuilder sb = new StringBuilder();
     static Queue<Integer> q = new LinkedList<>();
     static boolean[][] arr;
