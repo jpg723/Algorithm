@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class SLIVER_BJ2667 {
+public class SLIVER1_BJ2667 {
     //https://www.acmicpc.net/problem/2667
     // 단지번호 붙이기
 
